@@ -1,0 +1,39 @@
+TE/WR
+	l_recepts17	l_recyds17	l_rectd17	l_rec1st17
+
+QB
+	l_passyds17	l_passtd17	l_passint17
+RB
+	l_rushyds17	l_rushtd17	l_rush1st17
+
+
+
+lWR = []
+lQB = []
+lRB = []
+for i in range(len(data.l_pos18)):
+    if(data.l_pos18[i]=="WR" or data.l_pos18[i]=="TE"):
+        lWR.append(1)
+    else:
+        lWR.append(0)
+    if(data.l_pos18[i]=="QB"):
+        lQB.append(1)
+    else:
+        lQB.append(0)
+    if(data.l_pos18[i]=="RB"):
+        lRB.append(1)
+    else:
+        lRB.append(0)
+data['l_recepts17'] = lWR*data.l_recepts17
+data['l_recyds17'] = lWR*data.l_recyds17
+data['l_rectd17'] = lWR*data.l_rectd17
+data['l_rec1st17'] = lWR*data.l_rec1st17
+
+data['l_passyds17'] = lQB*data.l_passyds17
+data['l_passtd17'] = lQB*data.l_passtd17
+data['l_passint17'] = lQB*data.l_passint17
+
+data['l_rushyds17'] = lRB*data.l_rushyds17
+data['l_rushtd17'] = lRB*data.l_rushtd17
+data['l_rush1st17'] = lRB*data.l_rush1st17
+data['ownersPoints'] = data.l_points17*data.l_owners17
